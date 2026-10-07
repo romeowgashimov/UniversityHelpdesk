@@ -1,0 +1,69 @@
+@hostname = localhost
+@port = 5133
+@host = http://{{hostname}}:{{port}}
+
+###
+GET {{host}}/api/tickets
+Accept: application/json
+
+###
+POST {{host}}/api/tickets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi0JTQsNC90LjQuNC70L7QsiDQlNCw0L3QuNC70LsiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJUZWNobmljaWFuIiwiZXhwIjoxNzkxMTc3OTEwLCJpc3MiOiJVbml2ZXJzaXR5SGVscGRlc2siLCJhdWQiOiJVbml2ZXJzaXR5SGVscGRlc2tDbGllbnQifQ.s00PYyF3sBMnV8uQEI7RKhVccbgExXZBSsZbVEqmSLU
+Content-Type: application/json
+
+{
+    "equipmentType": 1,
+    "equipmentDetails": "Компьютер Huevo",
+    "roomNumber": "Ауд. 404",
+    "description": "Не запускается майнкрафт",
+    "applicantId": 0
+}
+
+###
+POST {{host}}/api/tickets
+Content-Type: application/json
+
+{
+    "equipmentType": 1,
+    "equipmentDetails": "Компьютер ROMA",
+    "roomNumber": "Ауд. 507",
+    "description": "",
+    "applicantId": 1
+}
+
+###
+PUT {{host}}/api/tickets/7/complete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi0JTQsNC90LjQuNC70L7QsiDQlNCw0L3QuNC70LsiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJUZWNobmljaWFuIiwiZXhwIjoxNzkwOTQ0MjQ0LCJpc3MiOiJVbml2ZXJzaXR5SGVscGRlc2siLCJhdWQiOiJVbml2ZXJzaXR5SGVscGRlc2tDbGllbnQifQ.jyemXzg9U-UIgyWDPmLSj1fzl6nnsRhENF6SC-sy68A
+
+###
+PUT {{host}}/api/tickets/7/assign
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi0JTQsNC90LjQuNC70L7QsiDQlNCw0L3QuNC70LsiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJUZWNobmljaWFuIiwiZXhwIjoxNzkxMTc3OTEwLCJpc3MiOiJVbml2ZXJzaXR5SGVscGRlc2siLCJhdWQiOiJVbml2ZXJzaXR5SGVscGRlc2tDbGllbnQifQ.s00PYyF3sBMnV8uQEI7RKhVccbgExXZBSsZbVEqmSLU
+
+###
+PUT {{host}}/api/tickets/3/complete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi0KDQvtC80LDQvdC-0LIg0KDQvtC80LDQvSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlRlY2huaWNpYW4iLCJleHAiOjE3OTA4NDY0NDMsImlzcyI6IlVuaXZlcnNpdHlIZWxwZGVzayIsImF1ZCI6IlVuaXZlcnNpdHlIZWxwZGVza0NsaWVudCJ9.45I-OVyCC04amls5uqzKoToRpy1C9cY2xuhWmYfGdMI
+
+###
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+    "login": "danilo",
+    "password": "555555"
+}
+
+###
+POST {{host}}/api/tickets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi0KHQuNC00L7RgNC-0LIg0KHQuNC00L7RgCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlRlY2huaWNpYW4iLCJleHAiOjE3OTA5NDI4OTIsImlzcyI6IlVuaXZlcnNpdHlIZWxwZGVzayIsImF1ZCI6IlVuaXZlcnNpdHlIZWxwZGVza0NsaWVudCJ9.L_Cyb5BdaNx9VbKhyW1kmJad3slhJYJ8jX_5Cvbz5w4 
+Content-Type: application/json
+
+{
+    "equipmentType": 1,
+    "equipmentDetails": "Термоядерная бомба",
+    "roomNumber": "Ауд. 666",
+    "description": "Мигает красным"
+}
+
+###
+GET {{host}}/api/tickets/my?fromDate=2026-09-24
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi0JTQsNC90LjQuNC70L7QsiDQlNCw0L3QuNC70LsiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJUZWNobmljaWFuIiwiZXhwIjoxNzkwOTQ0MjQ0LCJpc3MiOiJVbml2ZXJzaXR5SGVscGRlc2siLCJhdWQiOiJVbml2ZXJzaXR5SGVscGRlc2tDbGllbnQifQ.jyemXzg9U-UIgyWDPmLSj1fzl6nnsRhENF6SC-sy68A

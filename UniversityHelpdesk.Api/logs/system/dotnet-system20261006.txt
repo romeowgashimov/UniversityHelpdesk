@@ -1,0 +1,548 @@
+2026-10-06 13:37:05.144 +07:00 [INF] User profile is available. Using 'C:\Users\romeow\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-06 13:37:05.330 +07:00 [INF] Now listening on: http://localhost:5133
+2026-10-06 13:37:05.332 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-06 13:37:05.332 +07:00 [INF] Hosting environment: Development
+2026-10-06 13:37:05.332 +07:00 [INF] Content root path: C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Api
+2026-10-06 13:37:36.130 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - null null
+2026-10-06 13:37:36.157 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:37:36.165 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - 204 null null 36.3179ms
+2026-10-06 13:37:36.170 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/auth/login - application/json 38
+2026-10-06 13:37:36.172 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:37:36.209 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:37:36.231 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UniversityHelpdesk.Application.DTOs.LoginDTO) on controller Universityhelpdesk.Api.Controllers.AuthController (UniversityHelpdesk.Api).
+2026-10-06 13:37:37.960 +07:00 [INF] Executed DbCommand (66ms) [Parameters=[@dto_Login='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role"
+FROM "Users" AS u
+WHERE u."Login" = @dto_Login
+LIMIT 1
+2026-10-06 13:37:37.987 +07:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2026-10-06 13:37:37.993 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api) in 1757.8731ms
+2026-10-06 13:37:37.993 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:37:38.001 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/auth/login - 401 null text/plain; charset=utf-8 1832.2614ms
+2026-10-06 13:44:44.930 +07:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-10-06 13:44:45.249 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-10-06 13:44:45.263 +07:00 [INF] Applying migration '20260922131313_InitialCreate'.
+2026-10-06 13:44:45.298 +07:00 [INF] Applying migration '20260922132414_SeedUsers'.
+2026-10-06 13:44:45.320 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-10-06 13:44:45.329 +07:00 [INF] Applying migration '20260924091301_AddSecondTechnician'.
+2026-10-06 13:44:45.334 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-10-06 13:44:45.337 +07:00 [INF] Applying migration '20260924124117_AddPasswordAndUniqueLogin'.
+2026-10-06 13:44:45.350 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-10-06 13:44:45.362 +07:00 [INF] Applying migration '20261006062533_InitialPostgresMigration'.
+2026-10-06 13:44:45.375 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-10-06 13:44:45.423 +07:00 [ERR] Failed executing DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Tickets" ALTER COLUMN "CreatedAt" TYPE timestamp with time zone;
+2026-10-06 13:47:32.619 +07:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-10-06 13:47:32.872 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-10-06 13:47:32.939 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2026-10-06 13:47:32.950 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-10-06 13:47:32.953 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-10-06 13:47:32.957 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-10-06 13:47:32.968 +07:00 [INF] Applying migration '20261006064714_InitialPostgresClean'.
+2026-10-06 13:47:33.043 +07:00 [ERR] Failed executing DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "FullName" text NOT NULL,
+    "Email" text NOT NULL,
+    "Role" smallint NOT NULL,
+    "PasswordHash" text NOT NULL,
+    "Login" text NOT NULL,
+    CONSTRAINT "PK_Users" PRIMARY KEY ("Id")
+);
+2026-10-06 13:49:00.169 +07:00 [ERR] Failed executing DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-10-06 13:49:00.494 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-10-06 13:49:00.508 +07:00 [INF] Applying migration '20261006064848_InitialPostgresClean'.
+2026-10-06 13:50:07.793 +07:00 [INF] User profile is available. Using 'C:\Users\romeow\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-06 13:50:07.943 +07:00 [INF] Now listening on: http://localhost:5133
+2026-10-06 13:50:07.944 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-06 13:50:07.945 +07:00 [INF] Hosting environment: Development
+2026-10-06 13:50:07.945 +07:00 [INF] Content root path: C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Api
+2026-10-06 13:50:36.524 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - null null
+2026-10-06 13:50:36.550 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:50:36.555 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - 204 null null 32.7391ms
+2026-10-06 13:50:36.560 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/auth/login - application/json 36
+2026-10-06 13:50:36.562 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:50:36.621 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:50:36.642 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UniversityHelpdesk.Application.DTOs.LoginDTO) on controller Universityhelpdesk.Api.Controllers.AuthController (UniversityHelpdesk.Api).
+2026-10-06 13:50:38.414 +07:00 [INF] Executed DbCommand (66ms) [Parameters=[@dto_Login='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role"
+FROM "Users" AS u
+WHERE u."Login" = @dto_Login
+LIMIT 1
+2026-10-06 13:50:38.530 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 13:50:38.541 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api) in 1895.0185ms
+2026-10-06 13:50:38.541 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:50:38.549 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/auth/login - 200 null application/json; charset=utf-8 1990.0558ms
+2026-10-06 13:50:38.589 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 13:50:38.590 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:50:38.590 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 1.7495ms
+2026-10-06 13:50:38.593 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:50:38.593 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:50:38.647 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:50:38.659 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:50:38.787 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@applicantId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."ApplicantId" = @applicantId
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:50:38.789 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:50:38.816 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 157.2012ms
+2026-10-06 13:50:38.816 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:50:38.817 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 223.9659ms
+2026-10-06 13:50:38.819 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:50:38.819 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:50:38.824 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:50:38.825 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:50:38.910 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@applicantId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."ApplicantId" = @applicantId
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:50:38.910 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:50:38.910 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 85.5458ms
+2026-10-06 13:50:38.910 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:50:38.910 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 91.3575ms
+2026-10-06 13:51:38.579 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets - null null
+2026-10-06 13:51:38.580 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:38.580 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets - 204 null null 0.6939ms
+2026-10-06 13:51:38.582 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/tickets - application/json 224
+2026-10-06 13:51:38.583 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:38.585 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-10-06 13:51:38.592 +07:00 [INF] Route matched with {action = "Create", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Universityhelpdesk.Application.DTOs.TicketDTO]] Create(Universityhelpdesk.Application.DTOs.CreateTicketDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:51:38.774 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?' (DbType = Byte), @p5='?', @p6='?' (DbType = Byte), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tickets" ("ApplicantId", "CreatedAt", "Description", "EquipmentDetails", "EquipmentType", "RoomNumber", "Status", "TechnicianId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2026-10-06 13:51:38.818 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Id" = @id
+LIMIT 1
+2026-10-06 13:51:38.827 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'Universityhelpdesk.Application.DTOs.TicketDTO'.
+2026-10-06 13:51:38.847 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api) in 254.8646ms
+2026-10-06 13:51:38.847 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-10-06 13:51:38.847 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/tickets - 201 null application/json; charset=utf-8 264.6949ms
+2026-10-06 13:51:38.867 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 13:51:38.868 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:38.868 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 0.3262ms
+2026-10-06 13:51:38.870 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:51:38.870 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:38.870 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:38.871 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:51:38.876 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@applicantId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."ApplicantId" = @applicantId
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:51:38.878 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:51:38.879 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 8.3871ms
+2026-10-06 13:51:38.879 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:38.880 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 10.118ms
+2026-10-06 13:51:38.884 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:51:38.885 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:38.885 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:38.886 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:51:38.892 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@applicantId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."ApplicantId" = @applicantId
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:51:38.892 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:51:38.893 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 5.7882ms
+2026-10-06 13:51:38.893 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:38.893 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 8.4354ms
+2026-10-06 13:51:50.653 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - null null
+2026-10-06 13:51:50.653 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:50.654 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - 204 null null 0.4483ms
+2026-10-06 13:51:50.656 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/auth/login - application/json 37
+2026-10-06 13:51:50.656 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:50.657 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:51:50.657 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UniversityHelpdesk.Application.DTOs.LoginDTO) on controller Universityhelpdesk.Api.Controllers.AuthController (UniversityHelpdesk.Api).
+2026-10-06 13:51:50.659 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@dto_Login='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role"
+FROM "Users" AS u
+WHERE u."Login" = @dto_Login
+LIMIT 1
+2026-10-06 13:51:50.660 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 13:51:50.660 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api) in 3.6702ms
+2026-10-06 13:51:50.660 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:51:50.661 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/auth/login - 200 null application/json; charset=utf-8 4.335ms
+2026-10-06 13:51:50.679 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 13:51:50.679 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:50.679 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 0.3685ms
+2026-10-06 13:51:50.681 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:51:50.681 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:50.682 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:50.682 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:51:50.698 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:51:50.698 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:51:50.698 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 16.6153ms
+2026-10-06 13:51:50.699 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:50.699 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 17.3947ms
+2026-10-06 13:51:50.702 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:51:50.702 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:50.702 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:50.702 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:51:50.706 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:51:50.706 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:51:50.706 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 3.7188ms
+2026-10-06 13:51:50.706 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:50.706 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 4.6999ms
+2026-10-06 13:51:52.748 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - null null
+2026-10-06 13:51:52.748 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:52.748 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - 204 null null 0.2422ms
+2026-10-06 13:51:52.750 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - application/json null
+2026-10-06 13:51:52.750 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:52.751 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:52.751 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:51:52.771 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@technicianId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."TechnicianId" = @technicianId OR t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:51:52.771 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:51:52.771 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 20.6496ms
+2026-10-06 13:51:52.771 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:52.771 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - 200 null application/json; charset=utf-8 21.3263ms
+2026-10-06 13:51:53.321 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:51:53.321 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:51:53.321 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:53.321 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:51:53.324 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:51:53.324 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:51:53.324 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 3.0297ms
+2026-10-06 13:51:53.324 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:51:53.324 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 3.7231ms
+2026-10-06 13:52:11.594 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/1/assign - null null
+2026-10-06 13:52:11.594 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:11.594 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/1/assign - 204 null null 0.5062ms
+2026-10-06 13:52:11.598 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5133/api/tickets/1/assign - application/json 0
+2026-10-06 13:52:11.599 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:11.600 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api)'
+2026-10-06 13:52:11.606 +07:00 [INF] Route matched with {action = "AssignTechnician", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AssignTechnician(Int32) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:52:11.610 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Id" = @id
+LIMIT 1
+2026-10-06 13:52:11.650 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?' (DbType = Byte), @p5='?', @p6='?' (DbType = Byte), @p7='?' (DbType = Int32), @p14='?' (DbType = Int32), @p9='?', @p10='?', @p11='?', @p12='?', @p13='?' (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Tickets" SET "ApplicantId" = @p0, "CreatedAt" = @p1, "Description" = @p2, "EquipmentDetails" = @p3, "EquipmentType" = @p4, "RoomNumber" = @p5, "Status" = @p6, "TechnicianId" = @p7
+WHERE "Id" = @p8;
+UPDATE "Users" SET "Email" = @p9, "FullName" = @p10, "Login" = @p11, "PasswordHash" = @p12, "Role" = @p13
+WHERE "Id" = @p14;
+2026-10-06 13:52:11.664 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-10-06 13:52:11.664 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api) in 57.9432ms
+2026-10-06 13:52:11.664 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api)'
+2026-10-06 13:52:11.664 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5133/api/tickets/1/assign - 204 null null 66.8687ms
+2026-10-06 13:52:11.679 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 13:52:11.679 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:11.679 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 0.2905ms
+2026-10-06 13:52:11.683 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:52:11.683 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:11.683 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:11.683 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:52:11.685 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:52:11.685 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:52:11.685 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 2.3051ms
+2026-10-06 13:52:11.685 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:11.686 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 3.0162ms
+2026-10-06 13:52:15.121 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - null null
+2026-10-06 13:52:15.121 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:15.121 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - 204 null null 0.2557ms
+2026-10-06 13:52:15.124 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - application/json null
+2026-10-06 13:52:15.124 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:15.124 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:15.124 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:52:15.127 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@technicianId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."TechnicianId" = @technicianId OR t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:52:15.127 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:52:15.127 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 3.1369ms
+2026-10-06 13:52:15.128 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:15.128 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - 200 null application/json; charset=utf-8 4.3338ms
+2026-10-06 13:52:18.655 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/1/cancel - null null
+2026-10-06 13:52:18.655 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:18.656 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/1/cancel - 204 null null 0.2579ms
+2026-10-06 13:52:18.662 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5133/api/tickets/1/cancel - application/json 0
+2026-10-06 13:52:18.662 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:18.662 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CancelTicket (UniversityHelpdesk.Api)'
+2026-10-06 13:52:18.668 +07:00 [INF] Route matched with {action = "CancelTicket", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CancelTicket(Int32) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:52:18.671 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Id" = @id
+LIMIT 1
+2026-10-06 13:52:18.675 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?' (DbType = Byte), @p5='?', @p6='?' (DbType = Byte), @p7='?' (DbType = Int32), @p14='?' (DbType = Int32), @p9='?', @p10='?', @p11='?', @p12='?', @p13='?' (DbType = Byte), @p20='?' (DbType = Int32), @p15='?', @p16='?', @p17='?', @p18='?', @p19='?' (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Tickets" SET "ApplicantId" = @p0, "CreatedAt" = @p1, "Description" = @p2, "EquipmentDetails" = @p3, "EquipmentType" = @p4, "RoomNumber" = @p5, "Status" = @p6, "TechnicianId" = @p7
+WHERE "Id" = @p8;
+UPDATE "Users" SET "Email" = @p9, "FullName" = @p10, "Login" = @p11, "PasswordHash" = @p12, "Role" = @p13
+WHERE "Id" = @p14;
+UPDATE "Users" SET "Email" = @p15, "FullName" = @p16, "Login" = @p17, "PasswordHash" = @p18, "Role" = @p19
+WHERE "Id" = @p20;
+2026-10-06 13:52:18.677 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-10-06 13:52:18.677 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.CancelTicket (UniversityHelpdesk.Api) in 8.882ms
+2026-10-06 13:52:18.677 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CancelTicket (UniversityHelpdesk.Api)'
+2026-10-06 13:52:18.677 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5133/api/tickets/1/cancel - 204 null null 15.2848ms
+2026-10-06 13:52:18.683 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - application/json null
+2026-10-06 13:52:18.683 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:18.684 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:18.684 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:52:18.685 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@technicianId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."TechnicianId" = @technicianId OR t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:52:18.686 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:52:18.686 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 2.0686ms
+2026-10-06 13:52:18.686 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:18.686 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - 200 null application/json; charset=utf-8 2.6844ms
+2026-10-06 13:52:21.781 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - null null
+2026-10-06 13:52:21.782 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:21.782 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - 204 null null 0.2307ms
+2026-10-06 13:52:21.783 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - application/json null
+2026-10-06 13:52:21.783 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:52:21.784 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:21.784 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:52:21.787 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@technicianId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."TechnicianId" = @technicianId OR t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:52:21.787 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:52:21.787 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 3.0091ms
+2026-10-06 13:52:21.787 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:52:21.787 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - 200 null application/json; charset=utf-8 3.9544ms
+2026-10-06 13:58:32.936 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 13:58:32.936 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:32.936 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 0.2888ms
+2026-10-06 13:58:32.938 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:58:32.938 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:32.939 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:32.939 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:58:33.024 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:58:33.024 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:58:33.024 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 85.2658ms
+2026-10-06 13:58:33.024 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:33.024 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 86.1257ms
+2026-10-06 13:58:33.031 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:58:33.031 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:33.032 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:33.032 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:58:33.035 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:58:33.035 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:58:33.035 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 3.1297ms
+2026-10-06 13:58:33.035 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:33.035 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 4.1236ms
+2026-10-06 13:58:37.337 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - null null
+2026-10-06 13:58:37.337 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:37.337 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=true - 204 null null 0.3807ms
+2026-10-06 13:58:37.340 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - application/json null
+2026-10-06 13:58:37.340 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:37.340 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:37.340 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:58:37.342 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@technicianId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."TechnicianId" = @technicianId OR t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:58:37.343 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:58:37.343 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 2.5795ms
+2026-10-06 13:58:37.343 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:37.343 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=true - 200 null application/json; charset=utf-8 3.2498ms
+2026-10-06 13:58:56.304 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - null null
+2026-10-06 13:58:56.304 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:56.304 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - 204 null null 0.2008ms
+2026-10-06 13:58:56.308 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/auth/login - application/json 37
+2026-10-06 13:58:56.309 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:56.309 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:58:56.309 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UniversityHelpdesk.Application.DTOs.LoginDTO) on controller Universityhelpdesk.Api.Controllers.AuthController (UniversityHelpdesk.Api).
+2026-10-06 13:58:56.311 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@dto_Login='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role"
+FROM "Users" AS u
+WHERE u."Login" = @dto_Login
+LIMIT 1
+2026-10-06 13:58:56.311 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 13:58:56.311 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api) in 2.6994ms
+2026-10-06 13:58:56.312 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 13:58:56.312 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/auth/login - 200 null application/json; charset=utf-8 3.3418ms
+2026-10-06 13:58:56.333 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 13:58:56.333 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:56.333 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 0.233ms
+2026-10-06 13:58:56.336 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:58:56.336 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:56.336 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:56.337 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:58:56.339 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:58:56.339 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:58:56.339 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 2.6005ms
+2026-10-06 13:58:56.339 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:56.339 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 3.5252ms
+2026-10-06 13:58:56.342 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 13:58:56.342 +07:00 [INF] CORS policy execution successful.
+2026-10-06 13:58:56.343 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:56.343 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 13:58:56.345 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 13:58:56.345 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 13:58:56.345 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 2.5435ms
+2026-10-06 13:58:56.345 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 13:58:56.346 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 3.4546ms
+2026-10-06 14:02:54.348 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 14:02:54.349 +07:00 [INF] CORS policy execution successful.
+2026-10-06 14:02:54.349 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 0.3018ms
+2026-10-06 14:02:54.352 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 14:02:54.352 +07:00 [INF] CORS policy execution successful.
+2026-10-06 14:02:54.352 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 14:02:54.353 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 14:02:54.355 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."Status" = 1
+ORDER BY t."CreatedAt" DESC
+2026-10-06 14:02:54.355 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 14:02:54.355 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 2.781ms
+2026-10-06 14:02:54.355 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 14:02:54.355 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 3.5549ms
+2026-10-06 14:03:00.938 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - null null
+2026-10-06 14:03:00.938 +07:00 [INF] CORS policy execution successful.
+2026-10-06 14:03:00.938 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/auth/login - 204 null null 0.2401ms
+2026-10-06 14:03:00.942 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/auth/login - application/json 36
+2026-10-06 14:03:00.942 +07:00 [INF] CORS policy execution successful.
+2026-10-06 14:03:00.942 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 14:03:00.942 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UniversityHelpdesk.Application.DTOs.LoginDTO) on controller Universityhelpdesk.Api.Controllers.AuthController (UniversityHelpdesk.Api).
+2026-10-06 14:03:00.944 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@dto_Login='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role"
+FROM "Users" AS u
+WHERE u."Login" = @dto_Login
+LIMIT 1
+2026-10-06 14:03:00.945 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 14:03:00.945 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api) in 2.8599ms
+2026-10-06 14:03:00.945 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-10-06 14:03:00.945 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/auth/login - 200 null application/json; charset=utf-8 3.4381ms
+2026-10-06 14:03:00.965 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - null null
+2026-10-06 14:03:00.965 +07:00 [INF] CORS policy execution successful.
+2026-10-06 14:03:00.965 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5133/api/tickets/my?showOnlyMine=false - 204 null null 0.2133ms
+2026-10-06 14:03:00.967 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 14:03:00.967 +07:00 [INF] CORS policy execution successful.
+2026-10-06 14:03:00.967 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 14:03:00.967 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 14:03:00.970 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@applicantId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."ApplicantId" = @applicantId
+ORDER BY t."CreatedAt" DESC
+2026-10-06 14:03:00.970 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 14:03:00.970 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 2.7333ms
+2026-10-06 14:03:00.970 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 14:03:00.970 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 3.4233ms
+2026-10-06 14:03:00.974 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - application/json null
+2026-10-06 14:03:00.974 +07:00 [INF] CORS policy execution successful.
+2026-10-06 14:03:00.975 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 14:03:00.975 +07:00 [INF] Route matched with {action = "GetMyTickets", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Universityhelpdesk.Application.DTOs.TicketDTO]]] GetMyTickets(Universityhelpdesk.Application.DTOs.TicketFilterDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-10-06 14:03:00.977 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@applicantId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."ApplicantId", t."CreatedAt", t."Description", t."EquipmentDetails", t."EquipmentType", t."RoomNumber", t."Status", t."TechnicianId", u."Id", u."Email", u."FullName", u."Login", u."PasswordHash", u."Role", u0."Id", u0."Email", u0."FullName", u0."Login", u0."PasswordHash", u0."Role"
+FROM "Tickets" AS t
+INNER JOIN "Users" AS u ON t."ApplicantId" = u."Id"
+LEFT JOIN "Users" AS u0 ON t."TechnicianId" = u0."Id"
+WHERE t."ApplicantId" = @applicantId
+ORDER BY t."CreatedAt" DESC
+2026-10-06 14:03:00.978 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Universityhelpdesk.Domain.Entities.Ticket, UniversityHelpdesk.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Universityhelpdesk.Application.DTOs.TicketDTO, UniversityHelpdesk.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 14:03:00.978 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api) in 3.1743ms
+2026-10-06 14:03:00.978 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.GetMyTickets (UniversityHelpdesk.Api)'
+2026-10-06 14:03:00.978 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5133/api/tickets/my?showOnlyMine=false - 200 null application/json; charset=utf-8 4.0678ms

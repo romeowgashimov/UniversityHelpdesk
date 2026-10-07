@@ -1,0 +1,15 @@
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\bin\Debug\net10.0\UniversityHelpdesk.Application.deps.json
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\bin\Debug\net10.0\UniversityHelpdesk.Application.dll
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\bin\Debug\net10.0\UniversityHelpdesk.Application.pdb
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\bin\Debug\net10.0\UniversityHelpdesk.Domain.dll
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\bin\Debug\net10.0\UniversityHelpdesk.Domain.pdb
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\UniversityHelpdesk.Application.csproj.AssemblyReference.cache
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\UniversityHelpdesk.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\UniversityHelpdesk.Application.AssemblyInfoInputs.cache
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\UniversityHelpdesk.Application.AssemblyInfo.cs
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\UniversityHelpdesk.Application.csproj.CoreCompileInputs.cache
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\Universi.F8A5E65F.Up2Date
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\UniversityHelpdesk.Application.dll
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\refint\UniversityHelpdesk.Application.dll
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\UniversityHelpdesk.Application.pdb
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Application\obj\Debug\net10.0\ref\UniversityHelpdesk.Application.dll

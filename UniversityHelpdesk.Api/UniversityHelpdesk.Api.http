@@ -1,0 +1,6 @@
+@UniversityHelpdesk.Api_HostAddress = http://localhost:5133
+
+GET {{UniversityHelpdesk.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

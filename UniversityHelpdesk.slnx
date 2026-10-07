@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="UniversityHelpdesk.Api/UniversityHelpdesk.Api.csproj" />
+  <Project Path="UniversityHelpdesk.Application/UniversityHelpdesk.Application.csproj" />
+  <Project Path="UniversityHelpdesk.Domain/UniversityHelpdesk.Domain.csproj" />
+  <Project Path="UniversityHelpdesk.Infrastructure/UniversityHelpdesk.Infrastructure.csproj" />
+</Solution>

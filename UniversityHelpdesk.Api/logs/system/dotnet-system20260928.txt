@@ -1,0 +1,179 @@
+2026-09-28 12:25:04.330 +07:00 [INF] User profile is available. Using 'C:\Users\romeow\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-28 12:25:04.540 +07:00 [INF] Now listening on: http://localhost:5133
+2026-09-28 12:25:04.543 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-28 12:25:04.543 +07:00 [INF] Hosting environment: Development
+2026-09-28 12:25:04.543 +07:00 [INF] Content root path: C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Api
+2026-09-28 12:25:08.356 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/auth/login - application/json 54
+2026-09-28 12:25:08.435 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-09-28 12:25:08.472 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UniversityHelpdesk.Application.DTOs.LoginDTO) on controller Universityhelpdesk.Api.Controllers.AuthController (UniversityHelpdesk.Api).
+2026-09-28 12:25:10.000 +07:00 [INF] Executed DbCommand (32ms) [Parameters=[@dto_Login='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role"
+FROM "Users" AS "u"
+WHERE "u"."Login" = @dto_Login
+LIMIT 1
+2026-09-28 12:25:10.097 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-28 12:25:10.109 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api) in 1633.0588ms
+2026-09-28 12:25:10.110 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.AuthController.Login (UniversityHelpdesk.Api)'
+2026-09-28 12:25:10.117 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/auth/login - 200 null application/json; charset=utf-8 1763.412ms
+2026-09-28 12:26:28.026 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/tickets - application/json 160
+2026-09-28 12:26:28.033 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-09-28 12:26:28.037 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-28 12:26:28.038 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/tickets - 401 0 null 12.2773ms
+2026-09-28 12:27:06.048 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/tickets - application/json 160
+2026-09-28 12:27:06.098 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:27:06.106 +07:00 [INF] Route matched with {action = "Create", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Universityhelpdesk.Application.DTOs.TicketDTO]] Create(Universityhelpdesk.Application.DTOs.CreateTicketDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:27:06.314 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 7), @p3='?' (Size = 4), @p4='?' (DbType = Byte), @p5='?' (Size = 8), @p6='?' (DbType = Byte), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tickets" ("ApplicantId", "CreatedAt", "Description", "EquipmentDetails", "EquipmentType", "RoomNumber", "Status", "TechnicianId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2026-09-28 12:27:06.421 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."ApplicantId", "t"."CreatedAt", "t"."Description", "t"."EquipmentDetails", "t"."EquipmentType", "t"."RoomNumber", "t"."Status", "t"."TechnicianId", "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role", "u0"."Id", "u0"."Email", "u0"."FullName", "u0"."Login", "u0"."PasswordHash", "u0"."Role"
+FROM "Tickets" AS "t"
+INNER JOIN "Users" AS "u" ON "t"."ApplicantId" = "u"."Id"
+LEFT JOIN "Users" AS "u0" ON "t"."TechnicianId" = "u0"."Id"
+WHERE "t"."Id" = @id
+LIMIT 1
+2026-09-28 12:27:06.429 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'Universityhelpdesk.Application.DTOs.TicketDTO'.
+2026-09-28 12:27:06.459 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api) in 352.9497ms
+2026-09-28 12:27:06.459 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:27:06.459 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/tickets - 201 null application/json; charset=utf-8 411.1188ms
+2026-09-28 12:27:50.274 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5133/api/tickets/6/assign - null 0
+2026-09-28 12:27:50.277 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api)'
+2026-09-28 12:27:50.283 +07:00 [INF] Route matched with {action = "AssignTechnician", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AssignTechnician(Int32) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:27:50.358 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."ApplicantId", "t"."CreatedAt", "t"."Description", "t"."EquipmentDetails", "t"."EquipmentType", "t"."RoomNumber", "t"."Status", "t"."TechnicianId", "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role", "u0"."Id", "u0"."Email", "u0"."FullName", "u0"."Login", "u0"."PasswordHash", "u0"."Role"
+FROM "Tickets" AS "t"
+INNER JOIN "Users" AS "u" ON "t"."ApplicantId" = "u"."Id"
+LEFT JOIN "Users" AS "u0" ON "t"."TechnicianId" = "u0"."Id"
+WHERE "t"."Id" = @id
+LIMIT 1
+2026-09-28 12:27:50.392 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 7), @p3='?' (Size = 4), @p4='?' (DbType = Byte), @p5='?' (Size = 8), @p6='?' (DbType = Byte), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Tickets" SET "ApplicantId" = @p0, "CreatedAt" = @p1, "Description" = @p2, "EquipmentDetails" = @p3, "EquipmentType" = @p4, "RoomNumber" = @p5, "Status" = @p6, "TechnicianId" = @p7
+WHERE "Id" = @p8
+RETURNING 1;
+2026-09-28 12:27:50.399 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (Size = 14), @p1='?' (Size = 15), @p2='?' (Size = 6), @p3='?' (Size = 64), @p4='?' (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FullName" = @p1, "Login" = @p2, "PasswordHash" = @p3, "Role" = @p4
+WHERE "Id" = @p5
+RETURNING 1;
+2026-09-28 12:27:50.411 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-09-28 12:27:50.411 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api) in 127.7902ms
+2026-09-28 12:27:50.411 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api)'
+2026-09-28 12:27:50.412 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5133/api/tickets/6/assign - 204 null null 137.4877ms
+2026-09-28 12:28:05.867 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5133/api/tickets/6/complete - null 0
+2026-09-28 12:28:05.868 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api)'
+2026-09-28 12:28:05.874 +07:00 [INF] Route matched with {action = "CompleteTicket", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CompleteTicket(Int32) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:28:05.879 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."ApplicantId", "t"."CreatedAt", "t"."Description", "t"."EquipmentDetails", "t"."EquipmentType", "t"."RoomNumber", "t"."Status", "t"."TechnicianId", "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role", "u0"."Id", "u0"."Email", "u0"."FullName", "u0"."Login", "u0"."PasswordHash", "u0"."Role"
+FROM "Tickets" AS "t"
+INNER JOIN "Users" AS "u" ON "t"."ApplicantId" = "u"."Id"
+LEFT JOIN "Users" AS "u0" ON "t"."TechnicianId" = "u0"."Id"
+WHERE "t"."Id" = @id
+LIMIT 1
+2026-09-28 12:28:05.881 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 7), @p3='?' (Size = 4), @p4='?' (DbType = Byte), @p5='?' (Size = 8), @p6='?' (DbType = Byte), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Tickets" SET "ApplicantId" = @p0, "CreatedAt" = @p1, "Description" = @p2, "EquipmentDetails" = @p3, "EquipmentType" = @p4, "RoomNumber" = @p5, "Status" = @p6, "TechnicianId" = @p7
+WHERE "Id" = @p8
+RETURNING 1;
+2026-09-28 12:28:05.881 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (Size = 14), @p1='?' (Size = 15), @p2='?' (Size = 6), @p3='?' (Size = 64), @p4='?' (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FullName" = @p1, "Login" = @p2, "PasswordHash" = @p3, "Role" = @p4
+WHERE "Id" = @p5
+RETURNING 1;
+2026-09-28 12:28:05.884 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-09-28 12:28:05.884 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api) in 9.8598ms
+2026-09-28 12:28:05.884 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api)'
+2026-09-28 12:28:05.884 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5133/api/tickets/6/complete - 204 null null 17.4022ms
+2026-09-28 12:32:39.331 +07:00 [INF] User profile is available. Using 'C:\Users\romeow\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-28 12:32:39.476 +07:00 [INF] Now listening on: http://localhost:5133
+2026-09-28 12:32:39.477 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-28 12:32:39.477 +07:00 [INF] Hosting environment: Development
+2026-09-28 12:32:39.477 +07:00 [INF] Content root path: C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Api
+2026-09-28 12:33:24.169 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/tickets - application/json 186
+2026-09-28 12:33:24.300 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:33:24.332 +07:00 [INF] Route matched with {action = "Create", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Universityhelpdesk.Application.DTOs.TicketDTO]] Create(Universityhelpdesk.Application.DTOs.CreateTicketDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:33:24.494 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-28 12:33:24.524 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api) in 189.1113ms
+2026-09-28 12:33:24.525 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:33:24.529 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/tickets - 400 null application/problem+json; charset=utf-8 362.1321ms
+2026-09-28 12:33:43.101 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/tickets - application/json 207
+2026-09-28 12:33:43.107 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:33:43.108 +07:00 [INF] Route matched with {action = "Create", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Universityhelpdesk.Application.DTOs.TicketDTO]] Create(Universityhelpdesk.Application.DTOs.CreateTicketDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:33:43.121 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-28 12:33:43.121 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api) in 13.5618ms
+2026-09-28 12:33:43.121 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:33:43.122 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/tickets - 400 null application/problem+json; charset=utf-8 22.0787ms
+2026-09-28 12:33:48.398 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5133/api/tickets - application/json 208
+2026-09-28 12:33:48.403 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:33:48.403 +07:00 [INF] Route matched with {action = "Create", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Universityhelpdesk.Application.DTOs.TicketDTO]] Create(Universityhelpdesk.Application.DTOs.CreateTicketDTO) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:33:49.423 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 24), @p3='?' (Size = 15), @p4='?' (DbType = Byte), @p5='?' (Size = 8), @p6='?' (DbType = Byte), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tickets" ("ApplicantId", "CreatedAt", "Description", "EquipmentDetails", "EquipmentType", "RoomNumber", "Status", "TechnicianId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2026-09-28 12:33:49.807 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."ApplicantId", "t"."CreatedAt", "t"."Description", "t"."EquipmentDetails", "t"."EquipmentType", "t"."RoomNumber", "t"."Status", "t"."TechnicianId", "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role", "u0"."Id", "u0"."Email", "u0"."FullName", "u0"."Login", "u0"."PasswordHash", "u0"."Role"
+FROM "Tickets" AS "t"
+INNER JOIN "Users" AS "u" ON "t"."ApplicantId" = "u"."Id"
+LEFT JOIN "Users" AS "u0" ON "t"."TechnicianId" = "u0"."Id"
+WHERE "t"."Id" = @id
+LIMIT 1
+2026-09-28 12:33:49.824 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'Universityhelpdesk.Application.DTOs.TicketDTO'.
+2026-09-28 12:33:49.863 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api) in 1460.0502ms
+2026-09-28 12:33:49.863 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.Create (UniversityHelpdesk.Api)'
+2026-09-28 12:33:49.870 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5133/api/tickets - 201 null application/json; charset=utf-8 1471.2846ms
+2026-09-28 12:34:03.076 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5133/api/tickets/7/complete - null 0
+2026-09-28 12:34:03.078 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api)'
+2026-09-28 12:34:03.085 +07:00 [INF] Route matched with {action = "CompleteTicket", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CompleteTicket(Int32) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:34:03.150 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."ApplicantId", "t"."CreatedAt", "t"."Description", "t"."EquipmentDetails", "t"."EquipmentType", "t"."RoomNumber", "t"."Status", "t"."TechnicianId", "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role", "u0"."Id", "u0"."Email", "u0"."FullName", "u0"."Login", "u0"."PasswordHash", "u0"."Role"
+FROM "Tickets" AS "t"
+INNER JOIN "Users" AS "u" ON "t"."ApplicantId" = "u"."Id"
+LEFT JOIN "Users" AS "u0" ON "t"."TechnicianId" = "u0"."Id"
+WHERE "t"."Id" = @id
+LIMIT 1
+2026-09-28 12:34:03.151 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2026-09-28 12:34:03.152 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api) in 66.4701ms
+2026-09-28 12:34:03.152 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api)'
+2026-09-28 12:34:03.152 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5133/api/tickets/7/complete - 400 null text/plain; charset=utf-8 76.1403ms
+2026-09-28 12:34:36.949 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5133/api/tickets/7/assign - null 0
+2026-09-28 12:34:36.950 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api)'
+2026-09-28 12:34:36.956 +07:00 [INF] Route matched with {action = "AssignTechnician", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AssignTechnician(Int32) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:34:36.972 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."ApplicantId", "t"."CreatedAt", "t"."Description", "t"."EquipmentDetails", "t"."EquipmentType", "t"."RoomNumber", "t"."Status", "t"."TechnicianId", "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role", "u0"."Id", "u0"."Email", "u0"."FullName", "u0"."Login", "u0"."PasswordHash", "u0"."Role"
+FROM "Tickets" AS "t"
+INNER JOIN "Users" AS "u" ON "t"."ApplicantId" = "u"."Id"
+LEFT JOIN "Users" AS "u0" ON "t"."TechnicianId" = "u0"."Id"
+WHERE "t"."Id" = @id
+LIMIT 1
+2026-09-28 12:34:37.016 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 24), @p3='?' (Size = 15), @p4='?' (DbType = Byte), @p5='?' (Size = 8), @p6='?' (DbType = Byte), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Tickets" SET "ApplicantId" = @p0, "CreatedAt" = @p1, "Description" = @p2, "EquipmentDetails" = @p3, "EquipmentType" = @p4, "RoomNumber" = @p5, "Status" = @p6, "TechnicianId" = @p7
+WHERE "Id" = @p8
+RETURNING 1;
+2026-09-28 12:34:37.024 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (Size = 14), @p1='?' (Size = 15), @p2='?' (Size = 6), @p3='?' (Size = 64), @p4='?' (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FullName" = @p1, "Login" = @p2, "PasswordHash" = @p3, "Role" = @p4
+WHERE "Id" = @p5
+RETURNING 1;
+2026-09-28 12:34:37.035 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-09-28 12:34:37.036 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api) in 79.4966ms
+2026-09-28 12:34:37.036 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.AssignTechnician (UniversityHelpdesk.Api)'
+2026-09-28 12:34:37.036 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5133/api/tickets/7/assign - 204 null null 87.1054ms
+2026-09-28 12:34:38.891 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5133/api/tickets/7/complete - null 0
+2026-09-28 12:34:38.901 +07:00 [INF] Executing endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api)'
+2026-09-28 12:34:38.901 +07:00 [INF] Route matched with {action = "CompleteTicket", controller = "Tickets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CompleteTicket(Int32) on controller Universityhelpdesk.Api.Controllers.TicketsController (UniversityHelpdesk.Api).
+2026-09-28 12:34:38.903 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."ApplicantId", "t"."CreatedAt", "t"."Description", "t"."EquipmentDetails", "t"."EquipmentType", "t"."RoomNumber", "t"."Status", "t"."TechnicianId", "u"."Id", "u"."Email", "u"."FullName", "u"."Login", "u"."PasswordHash", "u"."Role", "u0"."Id", "u0"."Email", "u0"."FullName", "u0"."Login", "u0"."PasswordHash", "u0"."Role"
+FROM "Tickets" AS "t"
+INNER JOIN "Users" AS "u" ON "t"."ApplicantId" = "u"."Id"
+LEFT JOIN "Users" AS "u0" ON "t"."TechnicianId" = "u0"."Id"
+WHERE "t"."Id" = @id
+LIMIT 1
+2026-09-28 12:34:38.905 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 24), @p3='?' (Size = 15), @p4='?' (DbType = Byte), @p5='?' (Size = 8), @p6='?' (DbType = Byte), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Tickets" SET "ApplicantId" = @p0, "CreatedAt" = @p1, "Description" = @p2, "EquipmentDetails" = @p3, "EquipmentType" = @p4, "RoomNumber" = @p5, "Status" = @p6, "TechnicianId" = @p7
+WHERE "Id" = @p8
+RETURNING 1;
+2026-09-28 12:34:38.906 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (Size = 14), @p1='?' (Size = 15), @p2='?' (Size = 6), @p3='?' (Size = 64), @p4='?' (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FullName" = @p1, "Login" = @p2, "PasswordHash" = @p3, "Role" = @p4
+WHERE "Id" = @p5
+RETURNING 1;
+2026-09-28 12:34:38.909 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-09-28 12:34:38.909 +07:00 [INF] Executed action Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api) in 7.2942ms
+2026-09-28 12:34:38.909 +07:00 [INF] Executed endpoint 'Universityhelpdesk.Api.Controllers.TicketsController.CompleteTicket (UniversityHelpdesk.Api)'
+2026-09-28 12:34:38.909 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5133/api/tickets/7/complete - 204 null null 18.1499ms

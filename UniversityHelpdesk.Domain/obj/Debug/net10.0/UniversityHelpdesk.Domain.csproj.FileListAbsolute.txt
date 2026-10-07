@@ -1,0 +1,11 @@
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\bin\Debug\net10.0\UniversityHelpdesk.Domain.deps.json
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\bin\Debug\net10.0\UniversityHelpdesk.Domain.dll
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\bin\Debug\net10.0\UniversityHelpdesk.Domain.pdb
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\UniversityHelpdesk.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\UniversityHelpdesk.Domain.AssemblyInfoInputs.cache
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\UniversityHelpdesk.Domain.AssemblyInfo.cs
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\UniversityHelpdesk.Domain.csproj.CoreCompileInputs.cache
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\UniversityHelpdesk.Domain.dll
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\refint\UniversityHelpdesk.Domain.dll
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\UniversityHelpdesk.Domain.pdb
+C:\Users\romeow\UniversityHelpdesk\UniversityHelpdesk.Domain\obj\Debug\net10.0\ref\UniversityHelpdesk.Domain.dll

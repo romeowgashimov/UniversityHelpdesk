@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Brcuf/rtZCA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\romeow\\UniversityHelpdesk\\UniversityHelpdesk.Application\\UniversityHelpdesk.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\romeow\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.12\\microsoft.extensions.dependencyinjection.abstractions.10.0.12.nupkg.sha512",
+    "C:\\Users\\romeow\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.12\\microsoft.extensions.logging.abstractions.10.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}
